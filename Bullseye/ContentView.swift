@@ -27,12 +27,33 @@ struct ContentView: View {
                     Slider(value: .constant(10))
                     Text("100")
                 }
+                
                 //button row
                 Button(action: {
                     print("Button pressed")
                     self.alertIsVisiable = true
                 }) {
                   Text(/*@START_MENU_TOKEN@*/"Hit me!"/*@END_MENU_TOKEN@*/)
+                }
+                HStack {
+                    Button(action: {
+                        //action here
+                        print("Start Over button was pressed")
+                    }) {
+                        Text("Start Over")
+                        
+                    }
+                    Text("Score:")
+                    Text("9999")
+                    Text("Round:")
+                    Text("999")
+                    Button(action: {
+                        //action here
+                        print("Info button was pressed")
+                    }) {
+                        Text("Info")
+                        
+                    }
                 }
                 .alert(isPresented: $alertIsVisiable) { () ->
                     Alert in
