@@ -15,19 +15,20 @@ struct ContentView: View {
     var body: some View {
         VStack {
             VStack {
+                Spacer()
                 //Target row
                 HStack {
                     Text("Put the bullseye as close as you can to: ")
                     Text(/*@START_MENU_TOKEN@*/"100"/*@END_MENU_TOKEN@*/)
                 }
-                
+                Spacer()
                 //Slider row
                 HStack{
                     Text("1")
                     Slider(value: .constant(10))
                     Text("100")
                 }
-                
+                Spacer()
                 //button row
                 Button(action: {
                     print("Button pressed")
@@ -35,6 +36,8 @@ struct ContentView: View {
                 }) {
                   Text(/*@START_MENU_TOKEN@*/"Hit me!"/*@END_MENU_TOKEN@*/)
                 }
+                Spacer()
+                // Score Row
                 HStack {
                     Button(action: {
                         //action here
@@ -43,10 +46,13 @@ struct ContentView: View {
                         Text("Start Over")
                         
                     }
+                    Spacer()
                     Text("Score:")
                     Text("9999")
+                    Spacer()
                     Text("Round:")
                     Text("999")
+                    Spacer()
                     Button(action: {
                         //action here
                         print("Info button was pressed")
@@ -55,6 +61,7 @@ struct ContentView: View {
                         
                     }
                 }
+                .padding(.bottom,20)
                 .alert(isPresented: $alertIsVisiable) { () ->
                     Alert in
                     return Alert(title: Text("Hello there!"), message: Text("This is my first popup."), dismissButton: .default(Text("Awesome!")))
